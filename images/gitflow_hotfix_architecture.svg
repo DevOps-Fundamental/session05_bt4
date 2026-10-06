@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 520" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="940" height="520" fill="rgb(15, 23, 42)" rx="10" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <!-- Top bar -->
+  <rect width="940" height="42" fill="rgb(30, 41, 59)" rx="10"/>
+  <rect y="32" width="940" height="10" fill="rgb(30, 41, 59)"/>
+  <circle cx="22" cy="21" r="6" fill="#ef4444"/>
+  <circle cx="40" cy="21" r="6" fill="#f59e0b"/>
+  <circle cx="58" cy="21" r="6" fill="#22c55e"/>
+  <text x="320" y="26" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="600">
+    Mo Hinh Gitflow: Quy Trinh Phat Hanh Hotfix Chuan
+  </text>
+
+  <!-- Track Labels -->
+  <!-- Track 1: main (Production) -->
+  <g transform="translate(40, 90)">
+    <rect width="130" height="34" rx="6" fill="rgba(34, 197, 94, 0.2)" stroke="#22c55e" stroke-width="1"/>
+    <text x="65" y="22" text-anchor="middle" fill="#22c55e" font-family="'Inter', sans-serif" font-size="12" font-weight="700">main (prod)</text>
+    <line x1="140" y1="17" x2="860" y2="17" stroke="#22c55e" stroke-width="2"/>
+  </g>
+
+  <!-- Track 2: hotfix (Emergency) -->
+  <g transform="translate(40, 220)">
+    <rect width="130" height="34" rx="6" fill="rgba(239, 68, 68, 0.2)" stroke="#ef4444" stroke-width="1"/>
+    <text x="65" y="22" text-anchor="middle" fill="#ef4444" font-family="'Inter', sans-serif" font-size="12" font-weight="700">hotfix/*</text>
+    <line x1="300" y1="17" x2="680" y2="17" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,4"/>
+  </g>
+
+  <!-- Track 3: develop (Development) -->
+  <g transform="translate(40, 360)">
+    <rect width="130" height="34" rx="6" fill="rgba(56, 189, 248, 0.2)" stroke="#38bdf8" stroke-width="1"/>
+    <text x="65" y="22" text-anchor="middle" fill="#38bdf8" font-family="'Inter', sans-serif" font-size="12" font-weight="700">develop</text>
+    <line x1="140" y1="17" x2="860" y2="17" stroke="#38bdf8" stroke-width="2"/>
+  </g>
+
+  <!-- Nodes and Actions -->
+  <!-- Node 1: v1.0.0 on main -->
+  <g transform="translate(260, 92)">
+    <circle cx="15" cy="15" r="16" fill="#1e293b" stroke="#22c55e" stroke-width="3"/>
+    <text x="15" y="20" text-anchor="middle" fill="#22c55e" font-family="'Consolas', monospace" font-size="11">C1</text>
+    <!-- Tag badge -->
+    <rect x="-25" y="-35" width="80" height="22" rx="4" fill="#22c55e"/>
+    <text x="15" y="-20" text-anchor="middle" fill="#0f172a" font-family="'Inter', sans-serif" font-size="10" font-weight="700">tag: v1.0.0</text>
+  </g>
+
+  <!-- Branching to develop -->
+  <path d="M285 117 L380 367" stroke="#38bdf8" stroke-width="2"/>
+  <circle cx="395" cy="377" r="14" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+  <text x="395" y="381" text-anchor="middle" fill="#38bdf8" font-family="'Consolas', monospace" font-size="10">Dev1</text>
+  <text x="395" y="415" text-anchor="middle" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="10">Dang code do</text>
+
+  <!-- Branching to hotfix/v1.0.1 from main -->
+  <path d="M285 117 L440 230" stroke="#ef4444" stroke-width="2"/>
+  <g transform="translate(440, 222)">
+    <circle cx="15" cy="15" r="16" fill="#1e293b" stroke="#ef4444" stroke-width="3"/>
+    <text x="15" y="20" text-anchor="middle" fill="#ef4444" font-family="'Consolas', monospace" font-size="10" font-weight="bold">Fix</text>
+    <text x="15" y="-12" text-anchor="middle" fill="#fca5a5" font-family="'Inter', sans-serif" font-size="11">Va loi bao mat</text>
+  </g>
+
+  <!-- Merge Hotfix -> main (with Tag v1.0.1) -->
+  <path d="M465 230 L620 117" stroke="#22c55e" stroke-width="2.5"/>
+  <g transform="translate(620, 92)">
+    <circle cx="15" cy="15" r="18" fill="#1e293b" stroke="#22c55e" stroke-width="3"/>
+    <text x="15" y="19" text-anchor="middle" fill="#22c55e" font-family="'Consolas', monospace" font-size="10" font-weight="bold">M_main</text>
+    <!-- Tag badge v1.0.1 -->
+    <rect x="-25" y="-35" width="80" height="22" rx="4" fill="#f59e0b"/>
+    <text x="15" y="-20" text-anchor="middle" fill="#0f172a" font-family="'Inter', sans-serif" font-size="10" font-weight="700">tag: v1.0.1</text>
+  </g>
+
+  <!-- Merge Hotfix -> develop (Crucial step!) -->
+  <path d="M465 240 L700 367" stroke="#38bdf8" stroke-width="2.5"/>
+  <g transform="translate(700, 362)">
+    <circle cx="15" cy="15" r="18" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+    <text x="15" y="19" text-anchor="middle" fill="#38bdf8" font-family="'Consolas', monospace" font-size="10" font-weight="bold">M_dev</text>
+    <text x="15" y="48" text-anchor="middle" fill="#22c55e" font-family="'Inter', sans-serif" font-size="10" font-weight="bold">Tranh troi loi!</text>
+  </g>
+
+  <!-- Status Summary Card -->
+  <g transform="translate(680, 160)">
+    <rect width="220" height="110" rx="8" fill="rgba(30, 41, 59, 0.8)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="15" y="25" fill="#f59e0b" font-family="'Inter', sans-serif" font-size="11" font-weight="700">YEU CAU QUY TRINH:</text>
+    <text x="15" y="48" fill="#22c55e" font-family="'Inter', sans-serif" font-size="11">&bull; Gop vao main</text>
+    <text x="15" y="68" fill="#f59e0b" font-family="'Inter', sans-serif" font-size="11">&bull; Danh tag v1.0.1</text>
+    <text x="15" y="88" fill="#38bdf8" font-family="'Inter', sans-serif" font-size="11">&bull; Gop nguoc vao develop</text>
+  </g>
+</svg>
